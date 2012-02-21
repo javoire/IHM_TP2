@@ -8,6 +8,27 @@ MainWindow::MainWindow(QWidget *parent) :
     /* Actions */
     createActions();
 
+    /* Menus */
+    createMenus();
+
+    /* Widgets */
+    createWidgets();
+
+}
+
+MainWindow::~MainWindow()
+{
+   delete ui;
+}
+
+void MainWindow::createWidgets()
+{
+    textedit = new QTextEdit(this);
+    setCentralWidget(textedit);
+}
+
+void MainWindow::createMenus()
+{
     /* Menu bars */
     menubar = menuBar();
     toolbar = addToolBar(tr("File"));
@@ -22,17 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
     toolbar->addAction(open_action);
     toolbar->addAction(save_action);
     toolbar->addAction(quit_action);
-
-     /* Text edit widget */
-    textedit = new QTextEdit(this);
-    setCentralWidget(textedit);
-
-
-}
-
-MainWindow::~MainWindow()
-{
-   delete ui;
 }
 
 void MainWindow::createActions()

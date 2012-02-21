@@ -39,6 +39,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void createActions();
+    void createMenus();
+    void createWidgets();
     QAction* open_action;
     QAction* quit_action;
     QAction* save_action;
