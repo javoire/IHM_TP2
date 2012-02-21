@@ -14,6 +14,7 @@
 #include <string>
 #include <QFile>
 #include <QTextStream>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -48,6 +49,7 @@ private:
     QString filename;
     QString htmlcontent;
     QString outputcontent;
+    QMessageBox msgbox;
 };
 
 #endif // MAINWINDOW_H

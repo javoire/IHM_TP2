@@ -92,13 +92,26 @@ void MainWindow::saveFile()
     QTextStream out(&file);
     QString outputcontent = textedit->toHtml();
     out << outputcontent;
-
-    cout << qPrintable(filename) << endl;
 }
 
 void MainWindow::quitApp()
 {
-    cout << "Bye bye!" << endl;
+    /* messagebox */
+    msgbox.setText("Warning!");
+    msgbox.setInformativeText("Are you absolutely sure that you wan't to quit this program? This action can not be undone!");
+    msgbox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgbox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgbox.exec();
+
+    switch (ret) {
+      case QMessageBox::Yes:
+            exit(0);
+          break;
+      case QMessageBox::No:
+          break;
+      default:
+          break;
+    }
 }
 
 void MainWindow::changeEvent(QEvent *e)
