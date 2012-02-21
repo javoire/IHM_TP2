@@ -5,15 +5,34 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
 
-    new_action = new QAction(tr("&New..."), this);
+    /* Actions */
+    open_action = new QAction(tr("&Open..."), this);
+    open_action->setShortcut(tr("Ctrl+N"));
+    open_action->setToolTip(tr("Open file"));;
+    open_action->setStatusTip(tr("Open file"));
+
+    save_action = new QAction(tr("&Save..."), this);
+    save_action->setShortcut(tr("Ctrl+N"));
+    save_action->setToolTip(tr("Save file"));;
+    save_action->setStatusTip(tr("Save file"));
+
+    quit_action = new QAction(tr("&Quit..."), this);
+    quit_action->setShortcut(tr("Ctrl+N"));
+    quit_action->setToolTip(tr("Quit file"));;
+    quit_action->setStatusTip(tr("Quit file"));
+
     menubar = menuBar();
+    toolbar = addToolBar(tr("File"));
+
     filemenu = menubar->addMenu(tr("&File"));
 
-    new_action->setShortcut(tr("Ctrl+N"));
-    new_action->setToolTip(tr("New file"));;
-    new_action->setStatusTip(tr("New file"));
+    filemenu->addAction(open_action);
+    filemenu->addAction(save_action);
+    filemenu->addAction(quit_action);
 
-    filemenu->addAction(new_action);
+    toolbar->addAction(open_action);
+    toolbar->addAction(save_action);
+    toolbar->addAction(quit_action);
 
 
 }

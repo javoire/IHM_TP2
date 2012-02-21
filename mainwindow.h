@@ -6,6 +6,7 @@
 #include <QMenuBar>
 #include <QAction>
 #include <QWidget>
+#include <QToolBar>
 
 namespace Ui {
     class MainWindow;
@@ -22,9 +23,12 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    QAction* new_action;
+    QAction* open_action;
+    QAction* quit_action;
+    QAction* save_action;
     QMenuBar* menubar;
     QMenu* filemenu;
+    QToolBar* toolbar;
 
 };
 
