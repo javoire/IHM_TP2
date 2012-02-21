@@ -21,11 +21,13 @@ MainWindow::MainWindow(QWidget *parent) :
     quit_action->setToolTip(tr("Quit file"));;
     quit_action->setStatusTip(tr("Quit file"));
 
+    /* Menu bars */
     menubar = menuBar();
     toolbar = addToolBar(tr("File"));
 
     filemenu = menubar->addMenu(tr("&File"));
 
+    /* Add actions */
     filemenu->addAction(open_action);
     filemenu->addAction(save_action);
     filemenu->addAction(quit_action);
@@ -33,6 +35,10 @@ MainWindow::MainWindow(QWidget *parent) :
     toolbar->addAction(open_action);
     toolbar->addAction(save_action);
     toolbar->addAction(quit_action);
+
+     /* Text edit widget */
+    textedit = new QTextEdit(this);
+    setCentralWidget(textedit);
 
 
 }

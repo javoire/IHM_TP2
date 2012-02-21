@@ -7,6 +7,7 @@
 #include <QAction>
 #include <QWidget>
 #include <QToolBar>
+#include <QTextEdit>
 
 namespace Ui {
     class MainWindow;
@@ -29,6 +30,7 @@ private:
     QMenuBar* menubar;
     QMenu* filemenu;
     QToolBar* toolbar;
+    QTextEdit* textedit;
 
 };
 
