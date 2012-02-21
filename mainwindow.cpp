@@ -52,6 +52,25 @@ void MainWindow::createActions()
     quit_action->setToolTip(tr("Quit file"));;
     quit_action->setStatusTip(tr("Quit file"));
 
+    connect(open_action, SIGNAL(triggered()), this, SLOT(openFile()));
+    connect(save_action, SIGNAL(triggered()), this, SLOT(saveFile()));
+    connect(quit_action, SIGNAL(triggered()), this, SLOT(quitApp()));
+
+}
+
+void MainWindow::openFile()
+{
+    cout << "Open file!" << endl;
+}
+
+void MainWindow::saveFile()
+{
+    cout << "Save file!" << endl;
+}
+
+void MainWindow::quitApp()
+{
+    cout << "Bye bye!" << endl;
 }
 
 void MainWindow::changeEvent(QEvent *e)

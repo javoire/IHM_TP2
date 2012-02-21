@@ -25,6 +25,11 @@ public:
 protected:
     void changeEvent(QEvent *e);
 
+private slots:
+    void openFile();
+    void saveFile();
+    void quitApp();
+
 private:
     Ui::MainWindow *ui;
     void createActions();
