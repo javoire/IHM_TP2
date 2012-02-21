@@ -47,17 +47,17 @@ void MainWindow::createMenus()
 
 void MainWindow::createActions()
 {
-    open_action = new QAction(tr("&Open..."), this);
+    open_action = new QAction(QIcon(":/icons/open.png"), tr("&Open..."), this);
     open_action->setShortcut(tr("Ctrl+N"));
     open_action->setToolTip(tr("Open file"));;
     open_action->setStatusTip(tr("Open file"));
 
-    save_action = new QAction(tr("&Save..."), this);
+    save_action = new QAction(QIcon(":/icons/save.png"),tr("&Save..."), this);
     save_action->setShortcut(tr("Ctrl+N"));
     save_action->setToolTip(tr("Save file"));;
     save_action->setStatusTip(tr("Save file"));
 
-    quit_action = new QAction(tr("&Quit..."), this);
+    quit_action = new QAction(QIcon(":/icons/quit.png"),tr("&Quit..."), this);
     quit_action->setShortcut(tr("Ctrl+N"));
     quit_action->setToolTip(tr("Quit file"));;
     quit_action->setStatusTip(tr("Quit file"));
@@ -70,7 +70,7 @@ void MainWindow::createActions()
 
 void MainWindow::openFile()
 {    
-    filename = QFileDialog::getOpenFileName(this, tr("Open File"), "/stud/users/promo12/dahl/IHM/TP2_QT", tr("HTML Files (*.html)"));
+    filename = QFileDialog::getOpenFileName(this, tr("Open File"), ":/", tr("HTML Files (*.html)"));
 
     /* read file */
     QFile file(filename);
@@ -91,7 +91,7 @@ void MainWindow::openFile()
 
 void MainWindow::saveFile()
 {
-    filename = QFileDialog::getSaveFileName(this, tr("Save File"), "/stud/users/promo12/dahl/IHM/TP2_QT", tr("HTML Files (*.html)"));
+    filename = QFileDialog::getSaveFileName(this, tr("Save File"), ":/", tr("HTML Files (*.html)"));
 
     /* read file */
     QFile file(filename);
@@ -108,9 +108,9 @@ void MainWindow::quitApp()
 {
     /* messagebox */
     msgbox.setText("Warning!");
-    msgbox.setInformativeText("Are you absolutely sure that you wan't to quit this program? This action can not be undone!");
+    msgbox.setInformativeText("Are you absolutely sure that you wan't to quit? This action can not be undone! Not even by Frodo baggins who simply walked into Mordor!");
     msgbox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    msgbox.setDefaultButton(QMessageBox::Yes);
+    msgbox.setDefaultButton(QMessageBox::No);
     int ret = msgbox.exec();
 
     switch (ret) {

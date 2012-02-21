@@ -5,6 +5,7 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QAction>
+#include <QIcon>
 #include <QWidget>
 #include <QToolBar>
 #include <QTextEdit>
