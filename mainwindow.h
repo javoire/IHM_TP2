@@ -11,6 +11,8 @@
 #include <QFileDialog>
 #include <QString>
 #include <iostream>
+#include <QFile>
+#include <QTextStream>
 
 using namespace std;
 

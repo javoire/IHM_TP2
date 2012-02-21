@@ -60,7 +60,17 @@ void MainWindow::createActions()
 
 void MainWindow::openFile()
 {    
-    filename = QFileDialog::getOpenFileName(this, tr("Open File"), "/stud/users/promo12/dahl/", tr("Image Files (*.tif *.jpg *.bmp)"));
+    filename = QFileDialog::getOpenFileName(this, tr("Open File"), "/stud/users/promo12/dahl/IHM/TP2_QT", tr("HTML Files (*.html)"));
+
+    // read contents
+    QFile file(filename);
+         if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+             return;
+
+
+    // output to textedit
+
+
     cout << qPrintable(filename) << endl;
 }
 
