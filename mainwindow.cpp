@@ -59,13 +59,15 @@ void MainWindow::createActions()
 }
 
 void MainWindow::openFile()
-{
-    cout << "Open file!" << endl;
+{    
+    filename = QFileDialog::getOpenFileName(this, tr("Open File"), "/stud/users/promo12/dahl/", tr("Image Files (*.tif *.jpg *.bmp)"));
+    cout << qPrintable(filename) << endl;
 }
 
 void MainWindow::saveFile()
 {
-    cout << "Save file!" << endl;
+    filename = QFileDialog::getOpenFileName(this, tr("Save File"), "/stud/users/promo12/dahl/", tr("Image Files (*.tif *.jpg *.bmp)"));
+    cout << qPrintable(filename) << endl;
 }
 
 void MainWindow::quitApp()

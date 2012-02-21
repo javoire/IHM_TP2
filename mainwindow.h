@@ -8,6 +8,8 @@
 #include <QWidget>
 #include <QToolBar>
 #include <QTextEdit>
+#include <QFileDialog>
+#include <QString>
 #include <iostream>
 
 using namespace std;
@@ -40,6 +42,7 @@ private:
     QMenu* filemenu;
     QToolBar* toolbar;
     QTextEdit* textedit;
+    QString filename;
 
 };
 
