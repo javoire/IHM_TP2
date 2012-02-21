@@ -6,20 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     /* Actions */
-    open_action = new QAction(tr("&Open..."), this);
-    open_action->setShortcut(tr("Ctrl+N"));
-    open_action->setToolTip(tr("Open file"));;
-    open_action->setStatusTip(tr("Open file"));
-
-    save_action = new QAction(tr("&Save..."), this);
-    save_action->setShortcut(tr("Ctrl+N"));
-    save_action->setToolTip(tr("Save file"));;
-    save_action->setStatusTip(tr("Save file"));
-
-    quit_action = new QAction(tr("&Quit..."), this);
-    quit_action->setShortcut(tr("Ctrl+N"));
-    quit_action->setToolTip(tr("Quit file"));;
-    quit_action->setStatusTip(tr("Quit file"));
+    createActions();
 
     /* Menu bars */
     menubar = menuBar();
@@ -46,6 +33,25 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
    delete ui;
+}
+
+void MainWindow::createActions()
+{
+    open_action = new QAction(tr("&Open..."), this);
+    open_action->setShortcut(tr("Ctrl+N"));
+    open_action->setToolTip(tr("Open file"));;
+    open_action->setStatusTip(tr("Open file"));
+
+    save_action = new QAction(tr("&Save..."), this);
+    save_action->setShortcut(tr("Ctrl+N"));
+    save_action->setToolTip(tr("Save file"));;
+    save_action->setStatusTip(tr("Save file"));
+
+    quit_action = new QAction(tr("&Quit..."), this);
+    quit_action->setShortcut(tr("Ctrl+N"));
+    quit_action->setToolTip(tr("Quit file"));;
+    quit_action->setStatusTip(tr("Quit file"));
+
 }
 
 void MainWindow::changeEvent(QEvent *e)

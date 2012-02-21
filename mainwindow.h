@@ -8,6 +8,9 @@
 #include <QWidget>
 #include <QToolBar>
 #include <QTextEdit>
+#include <iostream>
+
+using namespace std;
 
 namespace Ui {
     class MainWindow;
@@ -24,6 +27,7 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+    void createActions();
     QAction* open_action;
     QAction* quit_action;
     QAction* save_action;
