@@ -11,6 +11,7 @@
 #include <QFileDialog>
 #include <QString>
 #include <iostream>
+#include <string>
 #include <QFile>
 #include <QTextStream>
 
@@ -45,7 +46,8 @@ private:
     QToolBar* toolbar;
     QTextEdit* textedit;
     QString filename;
-
+    QString htmlcontent;
+    QString outputcontent;
 };
 
 #endif // MAINWINDOW_H

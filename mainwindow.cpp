@@ -62,21 +62,37 @@ void MainWindow::openFile()
 {    
     filename = QFileDialog::getOpenFileName(this, tr("Open File"), "/stud/users/promo12/dahl/IHM/TP2_QT", tr("HTML Files (*.html)"));
 
-    // read contents
+    /* read file */
     QFile file(filename);
          if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
              return;
 
+    /* read contentns */
+     QTextStream in(&file);
+     htmlcontent = "";
+     while (!in.atEnd()) {
+        QString line = in.readLine();
+        htmlcontent += qPrintable(line);
+    }
 
-    // output to textedit
-
-
-    cout << qPrintable(filename) << endl;
+    /* output to textedit */
+    textedit->setHtml(htmlcontent);
 }
 
 void MainWindow::saveFile()
 {
-    filename = QFileDialog::getOpenFileName(this, tr("Save File"), "/stud/users/promo12/dahl/", tr("Image Files (*.tif *.jpg *.bmp)"));
+    filename = QFileDialog::getSaveFileName(this, tr("Save File"), "/stud/users/promo12/dahl/IHM/TP2_QT", tr("HTML Files (*.html)"));
+
+    /* read file */
+    QFile file(filename);
+         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+             return;
+
+    /* write to file */
+    QTextStream out(&file);
+    QString outputcontent = textedit->toHtml();
+    out << outputcontent;
+
     cout << qPrintable(filename) << endl;
 }
 
